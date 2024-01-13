@@ -7,13 +7,26 @@ This documents how the coaxial cable network is setup. I changed some of the spl
 ```mermaid
 flowchart TD
     T[Utility Pole] <--> A
-    A[Drop Cable] <--> I(POEGB-1G70CW Grouding Block/Low Pass Filter)
-    I <-->|5 - 1002MHZ Bandpass -70 dB| B{Amphenol MoCA 2-Way Splitter}
-    B <-->|-3.7 dB, 50 ft?| H{Crawl Space Cable} <--> C{Amphenol MoCA 3-Way Splitter}
-    B <-->|-3.7 dB, 50 ft?| O{Upstairs Cable}
-    C <-->|-7.3 dB, 50 ft| D[Living Room A]
-    C <-->|-7.3 dB, 50 ft| E[Living Room B]
-    C <-->|-3.7 dB, 50 ft| F[Back Bedroom]
+    A[Drop Cable] <--> I(POEGB-1G70CW Grounding Block/Low Pass Filter)
+    I <--> |5 - 1002MHz Bandpass -70 dB| B{Amphenol MoCA 2-Way Splitter}
+    B <--> | -3.7 dB, 50 ft | H{Crawl Space Cable} <--> |To 3-Way Splitter| C{Amphenol MoCA 3-Way Splitter}
+    B <--> | -3.7 dB, 50 ft | O{Upstairs Cable}
+    C <--> | -7.3 dB, 50 ft | D[Living Room A]
+    C <--> | -7.3 dB, 50 ft | E[Living Room B]
+    C <--> | -3.7 dB, 50 ft | F[Back Bedroom]
+
+    %% Color Key
+    Coaxial[Coxial Cable]
+    Splitter[Splitter]
+    Filter[Filter]
+
+    classDef coaxial fill:#bbf,color:black;
+    classDef splitter fill:#fdf,color:black;
+    classDef filter fill:#dfd,color:black;
+
+    class Coaxial,A,O,H,D,E,F coaxial;
+    class Splitter,B,C splitter;
+    class Filter,I filter;
 ```
 
 ## Components
