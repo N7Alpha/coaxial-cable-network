@@ -7,7 +7,7 @@ This documents how the coaxial cable network is setup. I changed some of the spl
 ```mermaid
 flowchart TD
     A[Drop Cable] <--> I(POEGB-1G70CW Grouding Block/Low Pass Filter)
-    I <-->|5 – 1002MHZ Bandpass -70 dB| B{Amphenol MoCA 2-Way Splitter}
+    I <-->|5 - 1002MHZ Bandpass -70 dB| B{Amphenol MoCA 2-Way Splitter}
     B <-->|-3.7 dB, 50 ft?| H{Crawl Space Cable} <--> C{Amphenol MoCA 3-Way Splitter}
     B <-->|-3.7 dB, 50 ft?| O{Upstairs Cable}
     C <-->|-7.3 dB, 50 ft| D[Living Room A]
