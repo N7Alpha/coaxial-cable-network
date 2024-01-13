@@ -6,6 +6,7 @@ This documents how the coaxial cable network is setup. I changed some of the spl
 
 ```mermaid
 flowchart TD
+    T[Utility Pole] <--> A
     A[Drop Cable] <--> I(POEGB-1G70CW Grouding Block/Low Pass Filter)
     I <-->|5 - 1002MHZ Bandpass -70 dB| B{Amphenol MoCA 2-Way Splitter}
     B <-->|-3.7 dB, 50 ft?| H{Crawl Space Cable} <--> C{Amphenol MoCA 3-Way Splitter}
@@ -13,11 +14,22 @@ flowchart TD
     C <-->|-7.3 dB, 50 ft| D[Living Room A]
     C <-->|-7.3 dB, 50 ft| E[Living Room B]
     C <-->|-3.7 dB, 50 ft| F[Back Bedroom]
-
-    click I href "POEGB-1GCW, POEGB-1G70CW PPC MoCA POE 40-70dB Groundblock Specs_07102019.pdf" "Open Datasheet"
-    click B href "2-Way.jpg"
-    click C href "3-Way.jpg"
 ```
+
+## Components
+
+### POEGB-1G70CW
+
+![Page 1 of POEGB-1G70CW Datasheet](page-1.png)
+![Page 2 of POEGB-1G70CW Datasheet](page-2.png)
+
+### Amphenol MoCA 2-Way Splitter
+
+![Image of Amphenol Splitter](2-Way.jpg)
+
+### Amphenol MoCA 3-Way Splitter
+
+![Image of Amphenol Splitter](3-Way.jpg)
 
 ## MoCA Overview
 
